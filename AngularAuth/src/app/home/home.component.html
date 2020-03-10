@@ -1,0 +1,17 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
+
+<div class="card mt-4">
+    <h4 class="card-header">Seja bem-vindo, {{ currentUser.OPER_login }}!</h4>
+    <div class="card-body">
+        <h6>Users from secure api end point</h6>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul *ngIf="users">
+            <li *ngFor="let user of users">{{ user.OPER_seq_oper }} | {{ user.OPER_login }}</li>
+        </ul>
+    </div>
+</div>
